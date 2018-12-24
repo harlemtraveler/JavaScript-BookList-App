@@ -26,6 +26,7 @@ class UI {
 
     const book = StoredBooks;
 
+    books.forEach((book) => UI.addBookToList(book));
   }
 }
 
