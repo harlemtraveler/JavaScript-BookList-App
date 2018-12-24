@@ -24,9 +24,31 @@ class UI {
       }
     ];
 
-    const book = StoredBooks;
+    const books = StoredBooks;
 
+    // Iterates "books" & calls "addBookToList()" func
     books.forEach((book) => UI.addBookToList(book));
+  }
+
+  static addBookToList(book) {
+    // Creates a row to insert into the table within index.html
+
+    // Obtain DOM element "#book-list" (stored in list var)
+    const list = document.querySelector('#book-list');
+
+    // Create a table-row HTML element (stored in row var)
+    const row = document.createElement('tr');
+
+    // Store input in new table-row element
+    row.innerHTML = `
+      <td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.isbn}</td>
+      <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    `;
+
+    // Add new row to the table
+    list.appendChild(row);
   }
 }
 
