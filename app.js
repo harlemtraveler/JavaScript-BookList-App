@@ -60,6 +60,26 @@ class UI {
     }
   }
 
+  // Alert
+  static showAlert(message, className) {
+    // Creates a DOM "div" element
+    const div = document.createElement('div');
+    // Assigns "className" param as the new "div"s class'
+    div.className = `alert alert-${className}`;
+    // Assigns "message" param as the new "div"s text
+    div.appendChild(document.createTextNode(message));
+    // Find desired parent element & place the new alert within it:
+
+    // The parent element: container
+    const container = document.querySelector('.container');
+    // The form element: book-form
+    const form = document.querySelector('#book-form');
+    // Take the "container" and insert our "div" before the "form"
+    container.insertBefore(div, form);
+    // Vanish in 3 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
+  }
+
   // Clears fields after submission
   static clearFields() {
     document.querySelector('#title').value = '';
@@ -85,7 +105,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   // Validate
   if(title === '' || author === '' || isbn === '') {
-    alert('Please fill in all fields');
+    UI.showAlert('Please fill in all fields', 'danger');
   } else {
     // Instantiate Book
     const book = new Book(title, author, isbn);
