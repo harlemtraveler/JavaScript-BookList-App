@@ -51,6 +51,15 @@ class UI {
     list.appendChild(row);
   }
 
+  // Deletes a targeted element(book)
+  static deleteBook(el) {
+    // Check if element has the class "delete"
+    if(el.classList.contains('delete')) {
+      // Remove "parent el" of the "parent el" (2 levels up to get entire row)
+      el.parentElement.parentElement.remove();
+    }
+  }
+
   // Clears fields after submission
   static clearFields() {
     document.querySelector('#title').value = '';
@@ -85,3 +94,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 });
 
 // Event: Remove a Book
+document.querySelector('#book-list').addEventListener('click', (e) => {
+  // "deleteBook()" targets specific element (else it would only target first instance)
+  UI.deleteBook(e.target);
+});
