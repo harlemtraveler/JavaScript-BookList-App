@@ -10,21 +10,8 @@ class Book {
 // UI Class: Handle UI Tasks
 class UI {
   static displayBooks() {
-    // Hard-coded StoredBooks array for demo (Acts as local storage)
-    const StoredBooks = [
-      {
-        title: 'Book One',
-        author: 'John Doe',
-        isbn: '3434434'
-      },
-      {
-        title: 'Book Two',
-        author: 'Jane Doe',
-        isbn: '45545'
-      }
-    ];
-
-    const books = StoredBooks;
+    // Get currently stored books
+    const books = Store.getBooks();
 
     // Iterates "books" & calls "addBookToList()" func
     books.forEach((book) => UI.addBookToList(book));
@@ -114,7 +101,21 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(isbn) {}
+  static removeBook(isbn) {
+    // Get currently stored books
+    const books = Store.getBooks();
+
+    // Iterate through "books" array
+    books.forEach((book, index) => {
+      // Check if current iterated item's "isbn" matches passed "isbn" param
+      if(book.isbn === isbn) {
+        // Splice out current iterated item from array by its index
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 }
 
 // Event: Display Books
@@ -140,6 +141,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     // Add Book to UI
     UI.addBookToList(book);
 
+    // Add Book to store
+    Store.addBook(book);
+
     // Show success message
     UI.showAlert('Book Added', 'success');
 
@@ -156,3 +160,19 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // Show success message
   UI.showAlert('Book Removed', 'success');
 });
+
+
+
+// Hard-coded StoredBooks array for demo (Acts as local storage):
+// const StoredBooks = [
+//   {
+//     title: 'Book One',
+//     author: 'John Doe',
+//     isbn: '3434434'
+//   },
+//   {
+//     title: 'Book Two',
+//     author: 'Jane Doe',
+//     isbn: '45545'
+//   }
+// ];
