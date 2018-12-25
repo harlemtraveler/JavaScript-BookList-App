@@ -103,7 +103,16 @@ class Store {
     return books;
   }
 
-  static addBook(book) {}
+  static addBook(book) {
+    // Get currently stored books
+    const books = Store.getBooks();
+
+    // Add new book to "books" array
+    books.push(book);
+
+    // Set (or save) local storage with books array (converted to a string)
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 
   static removeBook(isbn) {}
 }
