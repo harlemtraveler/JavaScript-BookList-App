@@ -113,6 +113,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     // Add Book to UI
     UI.addBookToList(book);
 
+    // Show success message
+    UI.showAlert('Book Added', 'success');
+
     // Clear Fields
     UI.clearFields();
   }
@@ -122,4 +125,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 document.querySelector('#book-list').addEventListener('click', (e) => {
   // "deleteBook()" targets specific element (else it would only target first instance)
   UI.deleteBook(e.target);
+
+  // Show success message
+  UI.showAlert('Book Removed', 'success');
 });
