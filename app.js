@@ -165,19 +165,3 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // Show success message
   UI.showAlert('Book Removed', 'success');
 });
-
-
-
-// Hard-coded StoredBooks array for demo (Acts as local storage):
-// const StoredBooks = [
-//   {
-//     title: 'Book One',
-//     author: 'John Doe',
-//     isbn: '3434434'
-//   },
-//   {
-//     title: 'Book Two',
-//     author: 'Jane Doe',
-//     isbn: '45545'
-//   }
-// ];
