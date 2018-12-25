@@ -37,7 +37,7 @@ No test required
 
 ## Deployment
 
-Application will be run locally. No deployment required.
+Application will be run locally. No deployment required. You will be able to view content by either opening the *index.html* file in your browser, or by running a *live server* with your Text Editor of choice (through the use of third-party packages/plug-ins).
 
 ## Built With
 
