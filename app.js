@@ -155,7 +155,12 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 // Event: Remove a Book
 document.querySelector('#book-list').addEventListener('click', (e) => {
   // "deleteBook()" targets specific element (else it would only target first instance)
+
+  // Remove book from UI
   UI.deleteBook(e.target);
+
+  // Remove book from store: target ISBN instead of entire row (what e.target points to)
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
   // Show success message
   UI.showAlert('Book Removed', 'success');
