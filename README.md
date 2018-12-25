@@ -48,9 +48,9 @@ Application will be run locally. No deployment required.
 
 ## Authors
 
-* **Timothy Keaveny** - *Initial work* - [MERN Social Media App](https://github.com/harlemtraveler/MERN-Social-Network)
+* **Timothy Keaveny** - *Initial work* - [JavaScript BookList App | No Frameworks](https://github.com/harlemtraveler/JavaScript-BookList-App)
 
-See also the list of [contributors](https://github.com/harlemtraveler/MERN-Social-Network/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/harlemtraveler/JavaScript-BookList-App/contributors) who participated in this project.
 
 ## License
 
