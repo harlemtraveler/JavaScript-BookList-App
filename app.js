@@ -90,7 +90,18 @@ class UI {
 
 // Store Class: Handles Storage
 class Store {
-  static getBooks() {}
+  static getBooks() {
+    let books;
+    // Check if there's a current "book" item
+    if(localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      // parse as json to be used as reg JS array of objs
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
 
   static addBook(book) {}
 
