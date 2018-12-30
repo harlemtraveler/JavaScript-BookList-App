@@ -6,6 +6,10 @@
 
 This is a simple BookList application that has full CRUD functionality. The project was created with Vanilla JavaScript to provide a refresher. The applicaiton comprises of a single form with a table below to display currently stored books. This project was created with the guidance of a tutorial, which will be linked to below.
 
+### Demo
+
+[JavaScript BookList Application](https://harlemtraveler.github.io/JavaScript-BookList-App/)
+
 ### Tutorial
 
 **Course:** [JavaScript BookList App | No Frameworks](https://www.youtube.com/watch?v=JaMCxVWtW58)
